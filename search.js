@@ -37,9 +37,19 @@ $(function(){
 					total_count		: total number of results
 					token			: resume key
 				*/
+				
+				var dataHTML = '';
+				for(var i in data.results)
+				{
+					dataHTML += "<div>" +
+					data.results[i].title	
+					
+					 + "</div>";
+				}
+				
 			
 			
-	    		$('#searchresults').html(data.results);
+	    		$('#searchresults').html(dataHTML);
 				
 				
 				// Set the Search Term
