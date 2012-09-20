@@ -1,2 +1,3 @@
-body{background:#000;}
-.container{width:1024px;height:768px;background:#fff;}
+body{background:#000;font:12px arial, sans-serif;}
+.container{width:1024px;height:768px;background:#fff;text-align:center;}
+.container h1{padding-top:20px;font-size:28px;width:90%;text-align: left;}
