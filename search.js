@@ -1,4 +1,8 @@
 $(function(){
+
+	var searchTerm = '';
+
+
 	$('#dosearch').bind('click', function() {
 	
 	  // Get the keywords
@@ -28,13 +32,44 @@ $(function(){
 											keys
 											curator
 											submitter
+											title
 					count			: count of reults for the current page
 					total_count		: total number of results
 					token			: resume key
 				*/
+				
+				var dataHTML = '';
+				for(var i in data.results)
+				{
+					dataHTML += "<div>" +
+					data.results[i].title	
+					
+					 + "</div>";
+				}
+				
 			
 			
-	    		$('#searchresults').html(data.results);
+	    		$('#searchresults').html(dataHTML);
+				
+				
+				// Set the Search Term
+				searchTerm = data.tags;
+				searchTerm = searchTerm.replace(",Grade K","");
+				searchTerm = searchTerm.replace(",Grade 1","");
+				searchTerm = searchTerm.replace(",Grade 2","");
+				searchTerm = searchTerm.replace(",Grade 3","");
+				searchTerm = searchTerm.replace(",Grade 4","");
+				searchTerm = searchTerm.replace(",Grade 5","");
+				searchTerm = searchTerm.replace(",Grade 6","");
+				searchTerm = searchTerm.replace(",Grade 7","");
+				searchTerm = searchTerm.replace(",Grade 8","");
+				searchTerm = searchTerm.replace(",Grade 9","");
+				searchTerm = searchTerm.replace(",Grade 10","");
+				searchTerm = searchTerm.replace(",Grade 11","");
+				searchTerm = searchTerm.replace(",Grade 12","");
+				searchTerm = searchTerm.replace(","," ");
+				
+				
 	  		}
 		});
 	});

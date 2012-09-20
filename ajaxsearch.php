@@ -66,6 +66,8 @@ foreach ($theData['documents'] as $document)
 					$newNode['submitter'] =  $document['resource_data_description']['identity']['submitter'];
 				if (isset($document['resource_data_description']['identity']['curator']))
 					$newNode['curator'] =  $document['resource_data_description']['identity']['curator'];
+					
+				$newNode['title'] = getTitle($document['resource_data_description']['resource_data'],$newNode['doc']);
 				$arResources[] = $newNode;
 			}
 		}
@@ -79,6 +81,8 @@ foreach ($theData['documents'] as $document)
 					$newNode['submitter'] =  $document['resource_data_description']['identity']['submitter'];
 			if (isset($document['resource_data_description']['identity']['curator']))
 				$newNode['curator'] =  $document['resource_data_description']['identity']['curator'];
+				
+			$newNode['title'] = getTitle($document['resource_data_description']['resource_data'],$newNode['doc']);
 			$arResources[] = $newNode;
 		}
 		
@@ -98,5 +102,20 @@ $arRet['total_count'] = $resultCount;
 $arRet['token'] = $resumeToken;
 
 echo json_encode($arRet);
+
+
+
+function getTitle($data,$url){
+	$title = $url;
+	
+	
+	$subject = $data;
+	$pattern = '/<dc:title>(.*)<\/dc:title>/i';
+	preg_match($pattern, $subject, $matches);
+	if (isset($matches[1]))
+		$title = $matches[1];
+	
+	return $title;
+}
 
 ?>
