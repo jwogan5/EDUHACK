@@ -1,6 +1,12 @@
 $(function(){
 
 	var searchTerm = '';
+	
+	
+	$('.results').live('click', function() {
+		var theURL = $(this).attr("rurl");
+		alert(theURL);
+	});
 
 
 	$('#dosearch').bind('click', function() {
@@ -35,8 +41,8 @@ $(function(){
 				var dataHTML = '';
 				for(var i in data.results)
 				{
-					dataHTML += "<div class='results'>" +
-					data.results[i].doc	
+					dataHTML += "<div class='results' rurl='" + data.results[i].doc + "'>" +
+					data.results[i].title	
 					
 					 + "</div>";
 				}
