@@ -32,6 +32,7 @@ $(function(){
 											keys
 											curator
 											submitter
+											title
 					count			: count of reults for the current page
 					total_count		: total number of results
 					token			: resume key
