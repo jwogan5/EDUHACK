@@ -23,7 +23,7 @@ $(function(){
 					url             : full url passed to learining registry
 					results         : array of resource data
 											id
-											loc
+											doc
 											keys
 											curator
 											submitter
@@ -36,7 +36,7 @@ $(function(){
 				for(var i in data.results)
 				{
 					dataHTML += "<div>" +
-					data.results[i].title	
+					data.results[i].doc	
 					
 					 + "</div>";
 				}
