@@ -35,7 +35,7 @@ $(function(){
 				var dataHTML = '';
 				for(var i in data.results)
 				{
-					dataHTML += "<div>" +
+					dataHTML += "<div class='results'>" +
 					data.results[i].doc	
 					
 					 + "</div>";
