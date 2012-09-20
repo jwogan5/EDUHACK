@@ -41,8 +41,19 @@
 			<span class="purpose">Purpose:</span><input type="text" class="purposetext" />
 			<br class="clear" />			
 			<span class="time">Time:</span>
-			<select><option value="1">1</option></select>
-			<select class="timenuits"><option value="minutes">minutes</option></select>
+			<select>
+				<?
+				for($i=1;$i<=60;$i++){
+					echo '<option value="'.$i.'">'.$i.'</option>';
+				}
+				?>
+				
+			</select>
+			<select class="timenuits">
+				<option value="minutes">Minutes</option>
+				<option value="hours">Hours</option>
+				<option value="days">Days</option>
+			</select>
 			<br class="clear" />			
 			<span class="materals">Materials:</span>
 			<textarea class="materialstext"></textarea>

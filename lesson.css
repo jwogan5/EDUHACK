@@ -12,12 +12,12 @@ body{background:#fff;font:12px 'Shadows Into Light', cursive;width:1024px;height
 .lessonpaper span{font-size:28px;height:25px;margin:10px 0 0 70px;display:block;float: left;width:110px;}
 .lessonpaper input{width:245px;height:25px;font-size:20px;margin:23px 0 0 15px;float: left;}
 .lessonpaper textarea{width:245px;height:125px;font-size:20px;margin:23px 0 0 15px;float: left;}
-.lessonpaper select{width:70px;height:25px;font-size:25px;margin:23px 0 0 15px;float: left;}
+.lessonpaper select{width:70px;height:35px;font-size:25px;margin:23px 0 0 15px;float: left;}
 .lessonpaper span.title{font-size:38px;}
 .lessonpaper span.purpose{margin-top:15px;}
-.lessonpaper select.timenuits{width:110px;}
-a.gotosearch{display:block;width:193px;height:51px;margin:15px 0 0 195px;background: url('go-to-site-btn.png') 0 0 no-repeat;}
-a.savelesson{display:block;width:193px;height:51px;margin:20px 0 0 255px;background: url('go-to-site-btn.png') 0 0 no-repeat;}
+.lessonpaper select.timenuits{width:180px;}
+a.gotosearch{display:block;width:247px;height:51px;margin:15px 0 0 195px;background: url('add-to-lesson-btn.png') 0 0 no-repeat;}
+a.savelesson{display:block;width:136px;height:34px;margin:25px 0 0 195px;background: url('save-lesson.png') 0 0 no-repeat;}
 
 
 a.twitterpost{display:inline-block;width:60px;height:73px;background: url('twitter-icon.png') 0 0 no-repeat;margin:45px 0 0 0;}
