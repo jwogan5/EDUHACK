@@ -1,0 +1,25 @@
+body{background:#fff;font:12px 'Shadows Into Light', cursive;width:1024px;height:100%;padding:0;margin:0;}
+.clear{clear:both;}
+.container{width:1024px;height:auto;color:#fff;overflow:hidden;background:#000;min-height:768px;}
+.nav{width:200px;float:left;height:auto;}
+.lesson{width:650px;float:left;height:auto;}
+.social{width:174px;float:left;height:auto;}
+.searchback,a.searchback:visited{display:block;margin:40px 0 0 25px;width:120px;height:167px;background: url('Search-btn-sml.png') 0 0 no-repeat;}
+.subject{width:498px;height:75px;background: url('Paper-header.gif') 0 0 no-repeat;margin:40px 0 0 20px;color:#000;}
+.subject span{font-size:28px;margin:20px 0 0 70px;display:block;float: left;width:110px;}
+.subject input{width:245px;height:25px;margin:23px 0 0 15px;float: left;font-size:20px;}
+.lessonpaper{width:498px;height:auto;background: url('Paper-repeat.gif') 0 0 repeat-y;margin:0 0 0 20px;color:#000;overflow:auto;}
+.lessonpaper span{font-size:28px;height:25px;margin:10px 0 0 70px;display:block;float: left;width:110px;}
+.lessonpaper input{width:245px;height:25px;font-size:20px;margin:23px 0 0 15px;float: left;}
+.lessonpaper textarea{width:245px;height:125px;font-size:20px;margin:23px 0 0 15px;float: left;}
+.lessonpaper select{width:70px;height:25px;font-size:25px;margin:23px 0 0 15px;float: left;}
+.lessonpaper span.title{font-size:38px;}
+.lessonpaper span.purpose{margin-top:15px;}
+.lessonpaper select.timenuits{width:110px;}
+a.gotosearch{display:block;width:193px;height:51px;margin:15px 0 0 195px;background: url('go-to-site-btn.png') 0 0 no-repeat;}
+a.savelesson{display:block;width:193px;height:51px;margin:20px 0 0 255px;background: url('go-to-site-btn.png') 0 0 no-repeat;}
+
+
+a.twitterpost{display:inline-block;width:60px;height:73px;background: url('twitter-icon.png') 0 0 no-repeat;margin:45px 0 0 0;}
+a.facebookpost{display:inline-block;width:60px;height:73px;background: url('facebook-icon.png') 0 0 no-repeat;margin:10px 0 0 0;}
+a.emaillesson{display:inline-block;width:61px;height:73px;background: url('email-icon.png') 0 0 no-repeat;margin:15px 0 0 0;}
