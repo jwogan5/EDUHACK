@@ -18,7 +18,7 @@
 <div id="contentWrapper">
 <div id="form1">
 <div id="search">
-	<input type="text" id="keywords" name="keywords" />
+	<input type="text" id="keyword" name="keyword" />
 	<input type="submit" name="submit" value="Q" id="dosearch" />
 
 	<select id="grade" name="grade">
