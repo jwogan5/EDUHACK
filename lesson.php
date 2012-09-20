@@ -31,8 +31,12 @@
 			<br class="clear" />
 			<?
 			if($_COOKIE["resources"]){
-				//loop through resources
-				
+				echo '<span class="">Resources:</span><br class="clear" /><br class="clear" />';
+				$arCookies = explode(',',$_COOKIE["resources"]);					
+				for($i=0;$i<count($arCookies);$i++){
+					$artmp = explode(':',$arCookies[1]);
+					echo '<p class="resources">'.$artmp[1].'</p>';	
+				}			
 			}
 			else{
 				echo '<a href="/search.php" class="gotosearch"></a>';
@@ -52,7 +56,7 @@
 			<select class="timenuits">
 				<option value="minutes">Minutes</option>
 				<option value="hours">Hours</option>
-				<option value="days">Days</option>
+				<option value="periods">Class Periods</option>
 			</select>
 			<br class="clear" />			
 			<span class="materals">Materials:</span>

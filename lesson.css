@@ -18,8 +18,8 @@ body{background:#fff;font:12px 'Shadows Into Light', cursive;width:1024px;height
 .lessonpaper select.timenuits{width:180px;}
 a.gotosearch{display:block;width:247px;height:51px;margin:15px 0 0 195px;background: url('add-to-lesson-btn.png') 0 0 no-repeat;}
 a.savelesson{display:block;width:136px;height:34px;margin:25px 0 0 195px;background: url('save-lesson.png') 0 0 no-repeat;}
-
-
 a.twitterpost{display:inline-block;width:60px;height:73px;background: url('twitter-icon.png') 0 0 no-repeat;margin:45px 0 0 0;}
 a.facebookpost{display:inline-block;width:60px;height:73px;background: url('facebook-icon.png') 0 0 no-repeat;margin:10px 0 0 0;}
 a.emaillesson{display:inline-block;width:61px;height:73px;background: url('email-icon.png') 0 0 no-repeat;margin:15px 0 0 0;}
+
+p.resources{padding:0;margin:0 0 0 70px;font-size:25px;}
