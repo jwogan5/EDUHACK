@@ -56,7 +56,16 @@ foreach ($theData['documents'] as $document)
 	{
 		if ($theGrade != 'any')
 		{
-			if (strpos($sKey,$theGrade) !== false)
+			$processResource = true;
+			$myTags = explode(",",$tags);
+			foreach($myTags as $theTag)
+			{
+				if (strpos($sKey,$theTag) !== false)
+					$temp = true;
+				else
+					$processResource = false;
+			}
+			if ($processResource)
 			{
 				$newNode = array();
 				$newNode['id'] = $document['doc_ID'];
@@ -107,11 +116,9 @@ echo json_encode($arRet);
 
 function getTitle($data,$url){
 	$title = $url;
-	
-	
-	$subject = $data;
+	$matches = array();
 	$pattern = '/<dc:title>(.*)<\/dc:title>/i';
-	preg_match($pattern, $subject, $matches);
+	preg_match($pattern, (string)$data, $matches);
 	if (isset($matches[1]))
 		$title = $matches[1];
 	

@@ -32,7 +32,6 @@ $(function(){
 					total_count		: total number of results
 					token			: resume key
 				*/
-				
 				var dataHTML = '';
 				for(var i in data.results)
 				{
