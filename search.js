@@ -4,15 +4,10 @@ $(function(){
 
 
 	$('#dosearch').bind('click', function() {
-	
-	  // Get the keywords
 	  var keys = $('#keyword').val();
-	  
-	  // Get the grade level
 	  var grade_level = $('#grade').val();
-	  
 	  var resumeKey = '';
-	
+
 	  $.ajax({
 	  		url: 'ajaxsearch.php',
 	  		type: "POST",
