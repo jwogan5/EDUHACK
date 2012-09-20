@@ -10,6 +10,7 @@
 	<link rel="stylesheet" media="screen" type="text/css" href="lesson.css" />   
 	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Shadows+Into+Light">
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+	<script src="lesson.js"></script>
 	<script>
 	
 	
@@ -24,12 +25,14 @@
 	</div>	
 	<div class="lesson">
 		<div class="subject">
-			<span>Subject:</span><input type="text" />
+			<span>Subject:</span><input type="text" class="subjecttext" />
 		</div>
 		<div class="lessonpaper">
 			<span class="title">Title:</span><input type="text" class="titletext" />
 			<br class="clear" />
 			<?
+			//
+			
 			if($_COOKIE["resources"]){
 				echo '<span class="">Resources:</span><br class="clear" /><br class="clear" />';
 				$arCookies = explode(',',$_COOKIE["resources"]);					
@@ -74,6 +77,7 @@
 		
 	</div>	
 	<div class="social">
+		<span class="f25">Share Lesson</span><br class="clear" />
 		<a href="#" class="twitterpost"></a>
 		<br />
 		<a href="#" class="facebookpost"></a>
