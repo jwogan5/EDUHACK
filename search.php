@@ -42,9 +42,9 @@
 </div><!--  form1  -->
 
 <div id="iframeBox">
-	<iframe id="theframe">
-	</iframe>
+	<iframe id="theframe" frameborder="0" width="625" height="450"></iframe>
 	
+<<<<<<< HEAD
 	<div id="goTo">
 		<a href=""><img src="go-to-site-btn.png" width="193" height="51px" alt="Go to Site" /></a>
 	</div>
@@ -52,14 +52,15 @@
 	<div id="addLesson">
 		<a href="#"><img src="add-to-lesson-btn.png" width="247" height=51" alt="Add to Lesson Plan" />	
 	</div>
+=======
+	<br style="clear:both;" />
+	<div id="goTo"></div><div id="addLesson"></div>
+>>>>>>> b0569f47f4910a6be9f0207b50aa11746cf394ca
 </div>
 
 <div id="resultsimg"></div>
 <div id="searchresults"></div>
-
-<div id="next">
-	<input type="button" value="resume" name="resume" id="resume" />
-</div>
+<div id="next"><input type="button" value="resume" name="resume" id="resume" /></div>
 
 </div><!-- contentWrapper -->
 </body>

@@ -10,10 +10,11 @@ html{background-color:#000;}
 #grade{float:left;margin-top:65px; width:150px;height:45px; font-size:1.5em;	-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;}
 
 #iframeBox{float:left;width:716px;min-height:572px;margin:60px 0 0 308px;background:#fff url(book-bgrnd.png) 0 0 no-repeat; -moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;}
+#iframeBox iframe{margin:20px 0 0 50px;}
 #resultsimg{margin:170px 0 0 30px;background:#000 url(results-header.png) 0 0 no-repeat;height:65px;width:232px;}
-#searchresults{float:left;margin:-507px 0 0 10px;width:285px;min-height:375px;max-height:510px;overflow:auto;-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;background-color:#000;}
-#theframe{margin:50px 80px;width:500px;height:400px;}
-#next{float:left;width:100px;margin:10px 0 0 -200px;}
+#searchresults{float:left;margin:-507px 0 0 10px;width:285px;min-height:375px;max-height:410px;overflow:auto;-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;background-color:#000;}
+#frame{margin:50px 80px;width:500px;height:400px;}
+#next{width:100px;margin:-120px 0 0 0}
 .results{border-bottom:1px solid #000;margin:3px;padding:3px;
 	background: -moz-linear-gradient(top, #ebebeb 0%, #ffffff 64%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ebebeb), color-stop(64%,#ffffff)); /* Chrome,Safari4+ */
@@ -22,6 +23,7 @@ html{background-color:#000;}
 	background: -ms-linear-gradient(top, #ebebeb 0%,#ffffff 64%); /* IE10+ */
 	background: linear-gradient(top, #ebebeb 0%,#ffffff 64%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebebeb', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+width:285px;
 }
 #goTo{margin:-35px 0 0 80px;}
 #addLesson{margin:-51px 0 0 340px;}

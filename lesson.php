@@ -7,7 +7,6 @@
 	<meta name="author" content="David Orick" />
 	<meta name="robots" content="ALL" />         
   	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=yes;" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
 	<link rel="stylesheet" media="screen" type="text/css" href="lesson.css" />   
 	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Shadows+Into+Light">
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
@@ -33,7 +32,7 @@
 			<br class="clear" />
 			<?
 			
-			if($_COOKIE["resources"]){
+			if(isset($_COOKIE["resources"]) && $_COOKIE["resources"]){
 				echo '<span class="">Resources:</span><br class="clear" /><br class="clear" />';
 				$arCookies = explode(',',$_COOKIE["resources"]);					
 				for($i=0;$i<count($arCookies);$i++){
@@ -48,7 +47,7 @@
 			<span class="purpose">Purpose:</span><input type="text" class="purposetext" />
 			<br class="clear" />			
 			<span class="time">Time:</span>
-			<select class="time">
+			<select class="timeselect">
 				<?
 				for($i=1;$i<=60;$i++){
 					echo '<option value="'.$i.'">'.$i.'</option>';

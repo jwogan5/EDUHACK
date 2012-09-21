@@ -6,7 +6,7 @@ $(function(){
 	var clickedResume = false;
 	
 	
-	$('.results').live('click', function() {
+	$('.results').delegate('click', function() {
 		currentResource = $(this);
 		var theURL = $(this).attr("rurl");
 		$('#theframe').attr('src', theURL);
