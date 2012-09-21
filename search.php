@@ -41,20 +41,15 @@
 </div><!--  form1  -->
 
 <div id="iframeBox">
-	<iframe id="theframe">
-	</iframe>
+	<iframe id="theframe" frameborder="0" width="625" height="450"></iframe>
 	
-	<div id="goTo"></div>
-	
-	<div id="addLesson"></div>
+	<br style="clear:both;" />
+	<div id="goTo"></div><div id="addLesson"></div>
 </div>
 
 <div id="resultsimg"></div>
 <div id="searchresults"></div>
-
-<div id="next">
-	<input type="button" value="resume" name="resume" id="resume" />
-</div>
+<div id="next"><input type="button" value="resume" name="resume" id="resume" /></div>
 
 </div><!-- contentWrapper -->
 </body>

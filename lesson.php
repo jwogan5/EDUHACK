@@ -7,7 +7,6 @@
 	<meta name="author" content="David Orick" />
 	<meta name="robots" content="ALL" />         
   	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=yes;" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
 	<link rel="stylesheet" media="screen" type="text/css" href="lesson.css" />   
 	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Shadows+Into+Light">
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
