@@ -14,6 +14,7 @@ html{background-color:#000;}
 #resultsimg{margin:170px 0 0 30px;background:#000 url(results-header.png) 0 0 no-repeat;height:65px;width:232px;}
 #searchresults{float:left;margin:-507px 0 0 10px;width:285px;min-height:375px;max-height:410px;overflow:auto;-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;background-color:#000;}
 #frame{margin:50px 80px;width:500px;height:400px;}
+#theframe{width:625px;height:450px;overflow:hidden;}
 #next{width:100px;margin:-120px 0 0 0}
 .results{border-bottom:1px solid #000;margin:3px;padding:3px;
 	background: -moz-linear-gradient(top, #ebebeb 0%, #ffffff 64%); /* FF3.6+ */

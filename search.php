@@ -49,7 +49,7 @@ if (!isset($_COOKIE['resources']))
 </div><!--  form1  -->
 
 <div id="iframeBox">
-	<iframe id="theframe" frameborder="0" width="625" height="450" scrolling="auto"></iframe>
+	<span id="framebox"><iframe id="theframe" frameborder="0" width="625" height="450" scrolling="auto"></iframe></span>
 	<br style="clear:both;" />
 	<div id="goTo">
 		<a href=""><img src="go-to-site-btn.png" width="193" height="51px" alt="Go to Site" /></a>
