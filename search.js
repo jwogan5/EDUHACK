@@ -15,7 +15,10 @@ $(function(){
 		$('#theframe').attr('src', theURL);
 	});
 	
-	
+	$('#goTo').bind('click', function(event) {
+		window.open(currentResource.attr('rurl'));
+		event.preventDefault();
+	});
 	
 	$('#resume').bind('click', function() {
 		clickedResume = true;
