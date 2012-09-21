@@ -1,0 +1,34 @@
+﻿<html>
+    <head>
+        <title>Demo: Publish on Facebook Wall Using Javscript SDK and FB.api</title>
+        <style type="text/css">
+            body{text-align: center}
+        </style>
+    </head>
+    <body>
+        <h1>Publish on Facebook Wall Using Javscript SDK and FB.api</h1><br/><br/>
+        <div id="fb-root"></div>
+        <script src="http://connect.facebook.net/en_US/all.js#appId=390083347723743&amp;xfbml=1"></script>
+        <script type="text/javascript">
+            function postonwall() {
+                FB.api('/me/feed', 'post',
+                {
+                    message: 'Lesson',
+                    link: 'http://www.google.com',
+                    name: 'Testing post api',
+                    picture: 'http://cache.lego.com/r/learninginstitute/-/media/Learning%20Institute/Home/ts.20110927T155625.children%20playing.jpg',
+                    description: 'DescriptionContent'
+                }, function (response) {
+                    if (!response || response.error) {
+                        //alert('Oops! User Denied Access');
+                    } else {
+                        //alert('Success: Content Published');
+                    }
+                });
+            }
+        </script>
+    <fb:login-button show-faces="false" width="200" max-rows="1" perms="publish_stream" onlogin="postonwall()">Click to Publish Below Content</fb:login-button>
+    <br/><br/><br/><br/><img src="wall-preview.png" style="border: 1px dotted #cccccc;"/>
+    
+</body>
+</html>
