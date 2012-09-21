@@ -1,4 +1,11 @@
 <!DOCTYPE html>
+<?php
+	require_once('mysql/database.php');
+	$oLesson = new Lesson();
+	if(!empty($_REQUEST['id'])) {
+		$oLesson = new Lesson($_REQUEST['id']);	
+	}
+ ?>
 <html lang="en">
 <head>
   <title>Lessons Learned</title>
@@ -25,10 +32,10 @@
 	</div>	
 	<div class="lesson">
 		<div class="subject">
-			<span>Subject:</span><input type="text" class="subjecttext" />
+			<span>Subject:</span><input type="text" class="subjecttext" value="<?= $oLesson->subject ?>" />
 		</div>
 		<div class="lessonpaper">
-			<span class="title">Title:</span><input type="text" class="titletext" />
+			<span class="title">Title:</span><input type="text" class="titletext" value="<?= $oLesson->title ?>" />
 			<br class="clear" />
 			<?
 			
@@ -44,31 +51,38 @@
 				echo '<span class="resourcesbtnlabel">Resources:</span><a href="/search.php" class="gotosearch"></a>';
 			}
 			?>			
-			<span class="purpose">Purpose:</span><input type="text" class="purposetext" />
+			<span class="purpose">Purpose:</span><input type="text" class="purposetext" value="<?= $oLesson->purpose ?>" />
 			<br class="clear" />			
 			<span class="time">Time:</span>
 			<select class="timeselect">
 				<?
 				for($i=1;$i<=60;$i++){
-					echo '<option value="'.$i.'">'.$i.'</option>';
+					if($i == $oLesson->duration) {
+						echo '<option value="'.$i.'" selected="selected">'.$i.'</option>';
+					} else {
+						echo '<option value="'.$i.'">'.$i.'</option>';
+					}
 				}
 				?>
 				
 			</select>
 			<select class="timenuits">
+<?php if(!empty($oLesson->duration_type)) { ?>
+				<option value="<?= $oLesson->duration_type ?>"><?= ucfirst($oLesson->duration_type) ?></option>
+<?php } ?>
 				<option value="minutes">Minutes</option>
 				<option value="hours">Hours</option>
 				<option value="periods">Class Periods</option>
 			</select>
 			<br class="clear" />			
 			<span class="materals">Materials:</span>
-			<textarea class="materialstext"></textarea>
+			<textarea class="materialstext"><?= $oLesson->materials ?></textarea>
 			<br class="clear" />
 			<span class="instructions">Instructions:</span>
-			<textarea class="instructionstext"></textarea>
+			<textarea class="instructionstext"><?= $oLesson->instruction ?></textarea>
 			<br class="clear" />
 			<span class="assessment">Assessment:</span>
-			<textarea class="assessmenttext"></textarea>
+			<textarea class="assessmenttext"><?= $oLesson->assessment ?></textarea>
 			<br class="clear" />	
 			<a href="#" class="savelesson"></a>	
 			<br class="clear" /><br class="clear" />
