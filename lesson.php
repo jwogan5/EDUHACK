@@ -105,9 +105,9 @@
 	</div>	
 	<div class="social">
 		<span class="f25">Share Lesson</span><br class="clear" />
-		<a href="#" class="twitterpost"></a>
+		<a href="#" id="twitterpost" class="twitterpost"></a>
 		<br />
-		<a href="#" class="facebookpost"></a>
+		<a href="#" id="facebookpost" class="facebookpost"></a>
 		<br />
 		<a href="#" class="emaillesson"></a>		
 	</div>	
