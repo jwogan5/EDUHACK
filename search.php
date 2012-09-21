@@ -19,7 +19,7 @@
 <div id="form1">
 <div id="search">
 	<input type="text" id="keyword" name="keyword" />
-	<input type="submit" name="submit" value="Q" id="dosearch" />
+	<input type="submit" name="submit" value="" id="dosearch" />
 
 	<select id="grade" name="grade">
 		<option value="any">Any</option>
@@ -41,16 +41,25 @@
 </div><!--  form1  -->
 
 <div id="iframeBox">
-	<iframe id="theframe">
-	</iframe>
+	<iframe id="theframe" frameborder="0" width="625" height="450"></iframe>
+	
+	<br style="clear:both;" />
+	<div id="goTo"></div><div id="addLesson"></div>
 </div>
 
-<div id="searchresults">
-</div>
-<div id="next">
-	<input type="button" value="resume" name="resume" id="resume" />
-</div>
+<div id="resultsimg"></div>
+<div id="searchresults"></div>
+<div id="next"><input type="button" value="resume" name="resume" id="resume" /></div>
 
 </div><!-- contentWrapper -->
 </body>
 </html>
+
+<?
+// Create resource cookie if it doesnt exist
+if (!isset($_COOKIE['resources']))
+{
+	setcookie("resources", 0, 0, "/"); 
+}
+?>
+
