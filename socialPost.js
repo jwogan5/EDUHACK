@@ -42,7 +42,7 @@
         });
 
         // respond to clicks on the login and logout links
-        document.getElementById('auth-loginlink').addEventListener('click', function () {
+        document.getElementById('facebookpost').addEventListener('click', function () {
             FB.login();
         });
     }
