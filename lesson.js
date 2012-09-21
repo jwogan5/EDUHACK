@@ -83,7 +83,7 @@ function setModalContent(){
 		$('.modalcontainer').html(htmlcontent);		
 }
 function setlessonsaved(){
-	var odata = '<a href="#" class="close">Close</a><br class="clear" /><span>Your lesson has been saved.</span><br /><p>Click the link(s) below to share this lesson plan.</p>		<a href="#" id="twitterpost" class="twitterpost"></a><a href="#" id="facebookpost" class="facebookpost"></a><a href="#" class="emaillesson"></a>';
+	var odata = '<a href="#" class="close">Close</a><br class="clear" /><span>Your lesson has been saved.</span><br /><p>Click the link(s) below to share this lesson plan.</p>		<a href="#" id="twitterpost" class="twitterpost"></a><div id="fb-root"></div><a href="#" id="facebookpost" class="facebookpost"></a><a href="#" class="emaillesson"></a>';
 	return odata;
 }
 function setCookie(){
