@@ -40,6 +40,15 @@
 			<br class="clear" />
 			<?
 			
+			$id = $oLesson->id;
+			if(!empty($id)) {
+				$db = eduhack_db::getInstance();
+				$qry = $db->query("SELECT url from lessonitem where lessonitem_id=$id;");
+				echo '<span class="">Resources:</span><br class="clear" /><br class="clear" />';
+				foreach ($qry as $row) {
+					echo '<p class="resources">'.$row['url'].'</p>';
+    			}
+			} else
 			if(isset($_COOKIE["resources"]) && $_COOKIE["resources"]){
 				echo '<span class="">Resources:</span><br class="clear" /><br class="clear" />';
 				
