@@ -59,3 +59,12 @@
 </div><!-- contentWrapper -->
 </body>
 </html>
+
+<?
+// Create resource cookie if it doesnt exist
+if (!isset($_COOKIE['resources']))
+{
+	setcookie("resources", 0, 0, "/"); 
+}
+?>
+
