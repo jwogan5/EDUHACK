@@ -23,7 +23,7 @@ if (!isset($_COOKIE['resources']))
 <body>
 
 <div id="contentWrapper">
-<a href="#"><img src="lesson-plan-btn-sml.png" id="imgLogo" /></a>
+<a href="/eduhack/lesson.php"><img src="lesson-plan-btn-sml.png" id="imgLogo" /></a>
 <div id="form1">
 <div id="search">
 	<input type="text" id="keyword" name="keyword" />
@@ -49,7 +49,7 @@ if (!isset($_COOKIE['resources']))
 </div><!--  form1  -->
 
 <div id="iframeBox">
-	<span id="framebox"><iframe id="theframe" frameborder="0" width="625" height="450" scrolling="auto"></iframe></span>
+	<div id="frameboxcont"><iframe id="theframe" frameborder="0" width="625" height="450" scrolling="auto"></iframe></div>
 	<br style="clear:both;" />
 	<div id="goTo">
 		<a href=""><img src="go-to-site-btn.png" width="193" height="51px" alt="Go to Site" /></a>
