@@ -17,6 +17,7 @@
 	<link rel="stylesheet" media="screen" type="text/css" href="lesson.css" />   
 	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Shadows+Into+Light">
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+	<script src="socialPost.js"></script>
 	<script src="cookie.js"></script>
 	<script src="lesson.js"></script>
 	<script>

@@ -7,10 +7,10 @@ $(document).ready(function(){
 			//share the current URL to whatever was clicked		
 			switch($(this).attr("class")){
 				case 'twitterpost':
-					
+					twitterPost(shareURL)
 					break;
 				case 'facebookpost':
-					
+					facebookPost('New Lesson Plan', shareURL, 'Lesson Plan', 'See the lesson plan');
 					break;
 				case 'emaillesson':
 					
