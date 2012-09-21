@@ -4,18 +4,26 @@ $(function(){
 	var currentResource = '';
 	var resumeToken = '';
 	var clickedResume = false;
+	var currentSavedResource = '';
 	
 	
-	$('.results').delegate('click', function() {
+
+	
+	$("body").on("click", ".results", function() {
+		alert('clicked');
 		currentResource = $(this);
 		var theURL = $(this).attr("rurl");
 		$('#theframe').attr('src', theURL);
 	});
 	
+	
+	
 	$('#resume').bind('click', function() {
 		clickedResume = true;
 		$('#dosearch').click();
 	});
+	
+	
 
 
 	$('#dosearch').bind('click', function() {
@@ -25,8 +33,6 @@ $(function(){
 	  if (clickedResume == false)
 	  	resumeToken = '';
 		
-	alert(resumeToken);
-
 	  $.ajax({
 	  		url: 'ajaxsearch.php',
 	  		type: "POST",
@@ -54,7 +60,7 @@ $(function(){
 				var dataHTML = '';
 				for(var i in data.results)
 				{
-					dataHTML += "<div class='results' rid='" + data.results[i].id + "' rurl='" + data.results[i].doc + "' rtitle='" + data.results[i].title + "'>" +
+					dataHTML += "<div class='results' onclick='' rid='" + data.results[i].id + "' rurl='" + data.results[i].doc + "' rtitle='" + data.results[i].title + "'>" +
 					data.results[i].title	
 					
 					 + "</div>";

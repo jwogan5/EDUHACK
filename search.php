@@ -1,3 +1,10 @@
+<?
+// Create resource cookie if it doesnt exist
+if (!isset($_COOKIE['resources']))
+{
+	setcookie("resources", 0, 0, "/"); 
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,6 +23,7 @@
 <body>
 
 <div id="contentWrapper">
+<a href="#"><img src="lesson-plan-btn-sml.png" id="imgLogo" /></a>
 <div id="form1">
 <div id="search">
 	<input type="text" id="keyword" name="keyword" />
@@ -42,9 +50,15 @@
 
 <div id="iframeBox">
 	<iframe id="theframe" frameborder="0" width="625" height="450"></iframe>
-	
 	<br style="clear:both;" />
-	<div id="goTo"></div><div id="addLesson"></div>
+	<div id="goTo">
+		<a href=""><img src="go-to-site-btn.png" width="193" height="51px" alt="Go to Site" /></a>
+	</div>
+
+	<div id="addLesson">
+		<a href="#"><img src="add-to-lesson-btn.png" width="247" height=51" alt="Add to Lesson Plan" />	
+	</div>
+
 </div>
 
 <div id="resultsimg"></div>
@@ -54,12 +68,4 @@
 </div><!-- contentWrapper -->
 </body>
 </html>
-
-<?
-// Create resource cookie if it doesnt exist
-if (!isset($_COOKIE['resources']))
-{
-	setcookie("resources", 0, 0, "/"); 
-}
-?>
 

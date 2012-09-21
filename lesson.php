@@ -28,7 +28,7 @@
 <div class="container">
 
 	<div class="nav">
-		<a href="/eduhack/search.html" class="searchback"></a>
+		<a href="/eduhack/search.php" class="searchback"></a>
 	</div>	
 	<div class="lesson">
 		<div class="subject">
