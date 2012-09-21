@@ -50,12 +50,7 @@ if (!isset($_COOKIE['resources']))
 
 <div id="iframeBox">
 	<iframe id="theframe" frameborder="0" width="625" height="450"></iframe>
-<<<<<<< HEAD
-	<br style="clear:both;" />	
-=======
-	
 	<br style="clear:both;" />
->>>>>>> another commit
 	<div id="goTo">
 		<a href=""><img src="go-to-site-btn.png" width="193" height="51px" alt="Go to Site" /></a>
 	</div>
@@ -63,10 +58,7 @@ if (!isset($_COOKIE['resources']))
 	<div id="addLesson">
 		<a href="#"><img src="add-to-lesson-btn.png" width="247" height=51" alt="Add to Lesson Plan" />	
 	</div>
-<<<<<<< HEAD
 
-=======
->>>>>>> another commit
 </div>
 
 <div id="resultsimg"></div>
@@ -75,11 +67,5 @@ if (!isset($_COOKIE['resources']))
 
 </div><!-- contentWrapper -->
 </body>
-<<<<<<< HEAD
 </html>
 
-
-
-=======
-</html>
->>>>>>> another commit
