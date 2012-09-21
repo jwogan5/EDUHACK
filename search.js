@@ -5,7 +5,7 @@ $(function(){
 	
 	$('.results').live('click', function() {
 		var theURL = $(this).attr("rurl");
-		alert(theURL);
+		$('#theframe').attr('src', theURL);
 	});
 
 

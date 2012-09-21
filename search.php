@@ -41,7 +41,7 @@
 </div><!--  form1  -->
 
 <div id="iframeBox">
-	<iframe id="frame">
+	<iframe id="theframe">
 	</iframe>
 </div>
 
