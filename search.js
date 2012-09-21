@@ -10,7 +10,6 @@ $(function(){
 
 	
 	$("body").on("click", ".results", function() {
-		alert('clicked');
 		currentResource = $(this);
 		var theURL = $(this).attr("rurl");
 		$('#theframe').attr('src', theURL);
@@ -21,6 +20,38 @@ $(function(){
 	$('#resume').bind('click', function() {
 		clickedResume = true;
 		$('#dosearch').click();
+	});
+	
+	$('#addLesson').bind('click', function() {
+	
+		if (currentSavedResource != currentResource.attr('rid'))
+		{
+			// Save the resource to the cookie
+			var rOBJ = {
+				id : currentResource.attr('rid'),
+				doc : currentResource.attr('rurl'),
+				title : currentResource.attr('rtitle')
+			};
+			
+			// Add Resource to current cookie
+			cookies = document.cookie.split(";");
+			for (var c in cookies)
+			{
+				var arcookie = cookies[c].split("=");
+				if (arcookie[0] == 'resources')
+				{
+					var cr = arcookie[1];
+					cr = cr + "----" + JSON.stringify(rOBJ);
+				}
+			}
+			cr = cr.replace("wogan","");
+			SetCookie('resources',cr);
+			
+			// Save current saved resource id
+			currentSavedResource = currentResource.attr('rid');
+		}
+		else
+			alert("Resource Document Already Saved");
 	});
 	
 	
@@ -95,5 +126,14 @@ $(function(){
 		clickedResume = false;
 	});
 });
+
+function SetCookie(cookieName,cookieValue,nDays) {
+ var today = new Date();
+ var expire = new Date();
+ if (nDays==null || nDays==0) nDays=1;
+ expire.setTime(today.getTime() + 3600000*24*nDays);
+ document.cookie = cookieName+"="+escape(cookieValue)
+                 + ";expires="+expire.toGMTString();
+}
 
 

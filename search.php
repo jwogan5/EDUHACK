@@ -2,7 +2,7 @@
 // Create resource cookie if it doesnt exist
 if (!isset($_COOKIE['resources']))
 {
-	setcookie("resources", 0, 0, "/"); 
+	setcookie("resources", "wogan", 0, "/"); 
 }
 ?>
 <!DOCTYPE html>
