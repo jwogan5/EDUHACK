@@ -40,21 +40,18 @@
 			<br class="clear" />
 			<?
 			
-
-			
 			if(isset($_COOKIE["resources"]) && $_COOKIE["resources"]){
 				echo '<span class="">Resources:</span><br class="clear" /><br class="clear" />';
-				$arCookies = explode(',',$_COOKIE["resources"]);					
-				for($i=0;$i<count($arCookies);$i++){
-					$artmp = explode(':',$arCookies[1]);
-					$artmp[1] = str_replace('\\','',$artmp[1]);
-					$artmp[1] = str_replace('"','',$artmp[1]);
-					$artmp[2] = str_replace('\\','',$artmp[2]);
-					$artmp[2] = str_replace('\/','',$artmp[2]);
-					$artmp[2] = str_replace('"','',$artmp[2]);
-					
-					echo '<p class="resources">'.$artmp[1].':'.$artmp[2].'</p>';	
-				}			
+				
+				
+				$arTemp = explode('----',$_COOKIE["resources"]);
+			
+				for($i=0;$i<count($arTemp);$i++){				
+					$ocookie = str_replace('\\','',urldecode($arTemp[$i]));
+					$arcookiedata = explode(',',$ocookie);
+					echo '<p class="resources">'.str_replace('"doc":','',$arcookiedata[1]).'</p>';			
+				}
+							
 			}
 			else{
 				echo '<span class="resourcesbtnlabel">Resources:</span><a href="/search.php" class="gotosearch"></a>';
