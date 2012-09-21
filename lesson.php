@@ -46,9 +46,12 @@
 				
 				$arTemp = explode('----',$_COOKIE["resources"]);
 			
-				for($i=0;$i<count($arTemp);$i++){				
+				for($i=0;$i<count($arTemp);$i++){		
 					$ocookie = str_replace('\\','',urldecode($arTemp[$i]));
+					$ocookie = urldecode($ocookie);
+					$ocookie = urldecode($ocookie);
 					$arcookiedata = explode(',',$ocookie);
+					
 					if (isset($arcookiedata[1]))
 					{
 						$tempstring = str_replace('"doc":','',$arcookiedata[1]);
