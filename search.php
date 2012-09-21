@@ -1,8 +1,8 @@
-<?
+﻿<?
 // Create resource cookie if it doesnt exist
 if (!isset($_COOKIE['resources']))
 {
-	setcookie("resources", "wogan", 0, "/"); 
+	setcookie("resources", "wogan", 0, "/eduhack/"); 
 }
 ?>
 <!DOCTYPE html>
