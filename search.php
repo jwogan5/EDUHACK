@@ -48,7 +48,7 @@
 <div id="searchresults">
 </div>
 <div id="next">
-	<input type="button" value="resume" name="resume" />
+	<input type="button" value="resume" name="resume" id="resume" />
 </div>
 
 </div><!-- contentWrapper -->
