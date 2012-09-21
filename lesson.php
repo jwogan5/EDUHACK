@@ -32,7 +32,7 @@
 			<br class="clear" />
 			<?
 			
-			if($_COOKIE["resources"]){
+			if(isset($_COOKIE["resources"]) && $_COOKIE["resources"]){
 				echo '<span class="">Resources:</span><br class="clear" /><br class="clear" />';
 				$arCookies = explode(',',$_COOKIE["resources"]);					
 				for($i=0;$i<count($arCookies);$i++){
@@ -47,7 +47,7 @@
 			<span class="purpose">Purpose:</span><input type="text" class="purposetext" />
 			<br class="clear" />			
 			<span class="time">Time:</span>
-			<select class="time">
+			<select class="timeselect">
 				<?
 				for($i=1;$i<=60;$i++){
 					echo '<option value="'.$i.'">'.$i.'</option>';

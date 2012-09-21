@@ -25,7 +25,7 @@ $(document).ready(function(){
 	$('.timenuits').bind('change',function(event){
 		btimeupdated = true;	
 	});
-	$('.time').bind('change',function(event){
+	$('.timeselect').bind('change',function(event){
 		btimeupdated = true;	
 	});		
 	
@@ -94,14 +94,14 @@ function setCookie(){
 		if($('.titletext').val() != ''){
 			lessoncookie.title = $('.titletext').val();
 		}					
-		if(btimeupdated){
-			lessoncookie.time = $('.time').val() + ' ' + $('.timenuits').val();
-		}		
+		//if(btimeupdated){
+			lessoncookie.time = $('.timeselect').val() + ' ' + $('.timenuits').val();
+		//}		
 		if($('.purposetext').val() != ''){
 			lessoncookie.purpose = $('.purposetext').val();
 		}			
-		if($('.materalstext').val() != ''){
-			lessoncookie.material = $('.materalstext').val();
+		if($('.materialstext').val() != ''){
+			lessoncookie.material = $('.materialstext').val();
 		}		
 		if($('.instructionstext').val() != ''){
 			lessoncookie.instruction = $('.instructionstext').val();
