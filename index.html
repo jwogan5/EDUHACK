@@ -1,34 +1,125 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#" class="htmlCls">
 <head>
-  <title>Lessons Learned</title>
-  <meta name="description" content="" />
-	<meta name="keywords" content="" />
-	<meta name="author" content="David Orick" />
-	<meta name="robots" content="ALL" />         
-  	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=yes;" />
-	<link rel="stylesheet" media="screen" type="text/css" href="index.css" />   
-	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Shadows+Into+Light">
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
-	<script>
-	
-	
-	</script>
+    <title>Lessons Learned</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="David Orick" />
+    <meta name="robots" content="ALL" />
+    <meta name="mobileoptimized" content="0" />
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=1;" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="HandheldFriendly" content="True" />
+    <link rel="apple-touch-icon" sizes="144x144" href="apple-touch-icon-144x144.png">
+    <link rel="stylesheet" media="screen,handheld,print" type="text/css" href="index.css" />
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Shadows+Into+Light" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+    <script src="http://platform.twitter.com/anywhere.js?id=1D5pibSYhf3hzcGakUGhYg&v=1"
+        type="text/javascript"></script>
 </head>
-<body>   
+<body>
+    <table class="tblHeader tblSize" align="center">
+        <tr>
+            <td valign="middle" align="center" class="containertitle">
+                <a href="/">
+                    <img src="Lessons-Learned-logo-small.png" class="imgLogo" /></a><span class="clsHeaderdesc">Lesson
+                        Planner</span>
+            </td>
+        </tr>
+    </table>
+    <table class="tblContent tblSize" align="center">
+        <tr>
+            <td valign="middle" align="center">
+                <div class="container">
+                    <img src="Table.jpg" class="imgtable" />
+                    <a href="/eduhack/search.html">
+                        <img src="lesson-btn.png" class="imglesson" /></a> <a href="/eduhack/lesson.php">
+                            <img src="Search-btn.png" class="imgsearch" /></a>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <table class="tblFooter tblSize" align="center">
+        <tr>
+            <td valign="top" align="center" width="50%">
+                <div id="fb-root">
+                </div>
+                <script>
+                    // Load the SDK Asynchronously
+                    (function (d) {
+                        var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+                        if (d.getElementById(id)) { return; }
+                        js = d.createElement('script'); js.id = id; js.async = true;
+                        js.src = "//connect.facebook.net/en_US/all.js";
+                        ref.parentNode.insertBefore(js, ref);
+                    } (document));
 
-<div class="container">
-	<div class="containertitle">LESSON PLANNER</div>
-	
-	<a href="/eduhack/search.html" class="searchbtn"></a>
-	<a href="/eduhack/lesson.php" class="lessonbtn"></a>
-	<br class="clear" />
-	<div class="sociallogin">
-		<span>Log In</span>
-		<a href="#" class="facebooklogin"></a>
-		<a href="#" class="twitterlogin"></a>
-	</div>	
-</div>
-   
+                    // Init the SDK upon load
+                    window.fbAsyncInit = function () {
+                        FB.init({
+                            appId: '390083347723743', // App ID
+                            channelUrl: '//' + window.location.hostname + '/channel.html', // Path to your Channel File
+                            status: true, // check login status
+                            cookie: true, // enable cookies to allow the server to access the session
+                            xfbml: true  // parse XFBML
+                        });
+
+                        // listen for and handle auth.statusChange events
+                        FB.Event.subscribe('auth.statusChange', function (response) {
+                            if (response.authResponse) {
+                                // user has auth'd your app and is logged into Facebook
+                                FB.api('/me', function (me) {
+                                    if (me.name) {
+                                        document.getElementById('auth-displayname').innerHTML = ' ' + me.name;
+                                    }
+                                })
+                                document.getElementById('auth-loggedout').style.display = 'none';
+                                document.getElementById('auth-loggedin').style.display = 'block';
+                            } else {
+                                // user has not auth'd your app, or is not logged into Facebook
+                                document.getElementById('auth-loggedout').style.display = 'block';
+                                document.getElementById('auth-loggedin').style.display = 'none';
+                            }
+                        });
+
+                        // respond to clicks on the login and logout links
+                        document.getElementById('auth-loginlink').addEventListener('click', function () {
+                            FB.login();
+                        });
+                        document.getElementById('auth-logoutlink').addEventListener('click', function () {
+                            FB.logout();
+                        });
+                    } 
+                </script>
+                <div id="auth-status">
+                    <div id="auth-loggedout">
+                        <a href="#" id="auth-loginlink">
+                            <img src="login-with-facebook.png" width="146px" height="24px" /></a>
+                    </div>
+                    <div id="auth-loggedin" style="display: none; font-size: 20px; color: #fff;">
+                        Welcome, <span id="auth-displayname"></span>
+                    </div>
+                </div>
+            </td>
+            <td valign="top" align="center" width="50%">
+                <span id="login"></span><span id="twitter-connect-placeholder"></span>
+                <script type="text/javascript">
+                    twttr.anywhere(function (T) {
+                        var currentUser, screenName, profileImage, profileImageTag;
+                        if (T.isConnected()) {
+                            currentUser = T.currentUser;
+                            screenName = currentUser.data('screen_name');
+                            profileImage = currentUser.data('profile_image_url');
+                            profileImageTag = "<img src='" + profileImage + "'/>";
+                            //$('#twitter-connect-placeholder').append("Logged in as " + profileImageTag + " " + screenName);
+                            $('#twitter-connect-placeholder').append("<img src='connected_146px.png' height='23px' widht='159px'/>");
+                        } else {
+                            T("#twitter-connect-placeholder").connectButton();
+                        };
+                    }); 
+                </script>
+            </td>
+        </tr>
+    </table>
 </body>
 </html>
