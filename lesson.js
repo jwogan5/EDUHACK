@@ -1,13 +1,13 @@
 var btimeupdated = false, lessonid = 0;
 $(document).ready(function(){
 
-	$('.twitterpost,.facebookpost,.emaillesson').bind('click',function(){
-		if(document.URL.indexOf('?lessonid') > 0 || lessonid > 0){
+	$('.twitterpost,.facebookpost,.emaillesson').live('click',function(){
+		if(document.URL.indexOf('?lessonid') > 0 || lessonid >= 0){
 			var shareURL = (document.URL.indexOf('?lessonid') > 0 ) ? document.URL: document.URL+'?lessonid='+lessonid;		
 			//share the current URL to whatever was clicked		
 			switch($(this).attr("class")){
 				case 'twitterpost':
-					twitterPost(shareURL)
+					twitterPost(shareURL);
 					break;
 				case 'facebookpost':
 					facebookPost('New Lesson Plan', shareURL, 'Lesson Plan', 'See the lesson plan');
