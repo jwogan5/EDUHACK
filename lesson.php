@@ -40,12 +40,20 @@
 			<br class="clear" />
 			<?
 			
+
+			
 			if(isset($_COOKIE["resources"]) && $_COOKIE["resources"]){
 				echo '<span class="">Resources:</span><br class="clear" /><br class="clear" />';
 				$arCookies = explode(',',$_COOKIE["resources"]);					
 				for($i=0;$i<count($arCookies);$i++){
 					$artmp = explode(':',$arCookies[1]);
-					echo '<p class="resources">'.$artmp[1].str_replace('\/','/',$artmp[2]).'</p>';	
+					$artmp[1] = str_replace('\\','',$artmp[1]);
+					$artmp[1] = str_replace('"','',$artmp[1]);
+					$artmp[2] = str_replace('\\','',$artmp[2]);
+					$artmp[2] = str_replace('\/','',$artmp[2]);
+					$artmp[2] = str_replace('"','',$artmp[2]);
+					
+					echo '<p class="resources">'.$artmp[1].':'.$artmp[2].'</p>';	
 				}			
 			}
 			else{
