@@ -49,7 +49,12 @@
 				for($i=0;$i<count($arTemp);$i++){				
 					$ocookie = str_replace('\\','',urldecode($arTemp[$i]));
 					$arcookiedata = explode(',',$ocookie);
-					echo '<p class="resources">'.str_replace('"doc":','',$arcookiedata[1]).'</p>';			
+					if (isset($arcookiedata[1]))
+					{
+						$tempstring = str_replace('"doc":','',$arcookiedata[1]);
+						$tempstring = str_replace('"','',$tempstring);
+						echo '<p class="resources">'.$tempstring.'</p>';
+					}			
 				}
 							
 			}
