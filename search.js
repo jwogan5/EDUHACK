@@ -7,12 +7,16 @@ $(function(){
 	var currentSavedResource = '';
 	
 	
-	$('.results').delegate('click', function() {
+
+	
+	$("body").on("click", ".results", function() {
 		alert('clicked');
 		currentResource = $(this);
 		var theURL = $(this).attr("rurl");
 		$('#theframe').attr('src', theURL);
 	});
+	
+	
 	
 	$('#resume').bind('click', function() {
 		clickedResume = true;
