@@ -15,8 +15,26 @@
 		$id = $oLesson->id;
 	}
 
-	//
-	//print_r(json_decode($_COOKIE['resource'],true));
-	//
-
+	if(!empty($_COOKIE['resources'])) {
+		$resources = explode('----', $_COOKIE['resources']);
+		$cnt = count($resources);
+		for($i = 0; $i < $cnt; $i++) {
+			$resource = $resources[$i];
+			for($ii=$i; $ii < $cnt; $ii++) {
+				$resource = urldecode($resource);
+			}
+			$aRes = json_decode($resource,true);
+			$aRes['lesson_id']=$id;
+			if(isset($aRes['id'])) {
+				$aRes['lrdocid'] = $aRes['id'];
+				unset($aRes['id']);
+			}
+			if(isset($aRes['doc'])) {
+				$aRes['url'] = $aRes['doc'];
+			}
+			$oItem = new LessonItem($aRes);
+			$oItem->save();
+		}
+	}
+	
 	echo $id;
