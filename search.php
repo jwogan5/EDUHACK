@@ -57,6 +57,9 @@ if (!isset($_COOKIE['resources']))
 	<div id="addLesson">
 		<a href="#"><img src="add-to-lesson-btn.png" width="247" height=51" alt="Add to Lesson Plan" />	
 	</div>
+	<div id="flagissue">
+		<a href="#"><img src="flag-btn.png" width="57" height=51" alt="Flag this Resource" />	
+	</div>
 
 </div>
 

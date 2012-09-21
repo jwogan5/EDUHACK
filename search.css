@@ -25,8 +25,9 @@ html{background-color:#000;}
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebebeb', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
 width:285px;
 }
-#goTo{margin:0 100px 0 80px;float:left;}
-#addLesson{margin:0 0 0 0;float: left;}
+#goTo{margin:0 30px 0 100px;float:left;}
+#addLesson{margin:0 30px 0 0;float: left;}
+#flagissue{margin:0 0 0 0;float: left;}
 
 
 /*
