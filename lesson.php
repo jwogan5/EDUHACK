@@ -10,6 +10,7 @@
 	<link rel="stylesheet" media="screen" type="text/css" href="lesson.css" />   
 	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Shadows+Into+Light">
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+	<script src="cookie.js"></script>
 	<script src="lesson.js"></script>
 	<script>
 	
@@ -17,11 +18,10 @@
 	</script>
 </head>
 <body>   
-
 <div class="container">
 
 	<div class="nav">
-		<a href="/search.html" class="searchback"></a>
+		<a href="/eduhack/search.html" class="searchback"></a>
 	</div>	
 	<div class="lesson">
 		<div class="subject">
@@ -31,24 +31,23 @@
 			<span class="title">Title:</span><input type="text" class="titletext" />
 			<br class="clear" />
 			<?
-			//
 			
 			if($_COOKIE["resources"]){
 				echo '<span class="">Resources:</span><br class="clear" /><br class="clear" />';
 				$arCookies = explode(',',$_COOKIE["resources"]);					
 				for($i=0;$i<count($arCookies);$i++){
 					$artmp = explode(':',$arCookies[1]);
-					echo '<p class="resources">'.$artmp[1].'</p>';	
+					echo '<p class="resources">'.$artmp[1].str_replace('\/','/',$artmp[2]).'</p>';	
 				}			
 			}
 			else{
-				echo '<a href="/search.php" class="gotosearch"></a>';
+				echo '<span class="resourcesbtnlabel">Resources:</span><a href="/search.php" class="gotosearch"></a>';
 			}
 			?>			
 			<span class="purpose">Purpose:</span><input type="text" class="purposetext" />
 			<br class="clear" />			
 			<span class="time">Time:</span>
-			<select>
+			<select class="time">
 				<?
 				for($i=1;$i<=60;$i++){
 					echo '<option value="'.$i.'">'.$i.'</option>';
