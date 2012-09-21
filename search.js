@@ -7,6 +7,7 @@ $(function(){
 	
 	
 	$('.results').delegate('click', function() {
+		alert('clicked');
 		currentResource = $(this);
 		var theURL = $(this).attr("rurl");
 		$('#theframe').attr('src', theURL);
@@ -54,7 +55,7 @@ $(function(){
 				var dataHTML = '';
 				for(var i in data.results)
 				{
-					dataHTML += "<div class='results' rid='" + data.results[i].id + "' rurl='" + data.results[i].doc + "' rtitle='" + data.results[i].title + "'>" +
+					dataHTML += "<div class='results' onclick='' rid='" + data.results[i].id + "' rurl='" + data.results[i].doc + "' rtitle='" + data.results[i].title + "'>" +
 					data.results[i].title	
 					
 					 + "</div>";
