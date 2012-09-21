@@ -1,23 +1,36 @@
 $(function(){
 
 	var searchTerm = '';
+	var currentResource = '';
+	var resumeToken = '';
+	var clickedResume = false;
 	
 	
 	$('.results').live('click', function() {
+		currentResource = $(this);
 		var theURL = $(this).attr("rurl");
-		alert(theURL);
+		$('#theframe').attr('src', theURL);
+	});
+	
+	$('#resume').bind('click', function() {
+		clickedResume = true;
+		$('#dosearch').click();
 	});
 
 
 	$('#dosearch').bind('click', function() {
 	  var keys = $('#keyword').val();
 	  var grade_level = $('#grade').val();
-	  var resumeKey = '';
+	  
+	  if (clickedResume == false)
+	  	resumeToken = '';
+		
+	alert(resumeToken);
 
 	  $.ajax({
 	  		url: 'ajaxsearch.php',
 	  		type: "POST",
-			data:{ keywords: keys, grade: grade_level, resume : resumeKey },
+			data:{ keywords: keys, grade: grade_level, resume : resumeToken },
 			dataType: "json",
 	  		success: function(data) {
 			
@@ -41,15 +54,16 @@ $(function(){
 				var dataHTML = '';
 				for(var i in data.results)
 				{
-					dataHTML += "<div class='results' rurl='" + data.results[i].doc + "'>" +
+					dataHTML += "<div class='results' rid='" + data.results[i].id + "' rurl='" + data.results[i].doc + "' rtitle='" + data.results[i].title + "'>" +
 					data.results[i].title	
 					
 					 + "</div>";
 				}
-				
-			
-			
+
 	    		$('#searchresults').html(dataHTML);
+				
+				
+				resumeToken = data.token;
 				
 				
 				// Set the Search Term
@@ -72,6 +86,7 @@ $(function(){
 				
 	  		}
 		});
+		clickedResume = false;
 	});
 });
 

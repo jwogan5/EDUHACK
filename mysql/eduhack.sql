@@ -40,5 +40,3 @@ create table if not exists lessonitem (
 	primary key (lessonitem_id)
 );
 
-
-insert into author

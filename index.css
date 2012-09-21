@@ -1,10 +1,159 @@
-body{background:#000;font:12px 'Shadows Into Light', cursive;width:1024px;height:768px;padding:0;margin:0;}
-.clear{clear:both;}
-.container{width:1024px;height:768px;background:#000 url('Table.jpg') 7px 370px no-repeat;color:#fff;overflow:hidden;}
-.containertitle{display:block;height:134px;font-size:28px;margin:30px 0 0 100px;padding:20px 0 0 164px;background:url('Lessons-Learned-logo-small.png') 0 0 no-repeat;}
-.sociallogin{margin:130px;}
-.container span{display:inline-block;margin:10px 60px 0 100px;font-size:30px;height:63px;float:left;}
-a.searchbtn{display:inline-block;width:247px;height:330px;background: url('Search-btn.png') 0 0 no-repeat;margin:0 0 0 220px;float:left;}
-a.lessonbtn{display:inline-block;width:226px;height:290px;background: url('lesson-btn.png') 0 0 no-repeat;margin:0 0 0 120px;float:left;}
-a.facebooklogin{display:inline-block;background:url('facebook-icon.png') 0 0 no-repeat;width:60px;height:73px;float:left;}
-a.twitterlogin{display:inline-block;background:url('twitter-icon.png') 0 0 no-repeat;width:60px;height:73px;float:left;margin:0 0 0 30px;}
+﻿.htmlCls
+{
+    height: 100%;
+    width: 100%;
+    min-width: 300px;
+    min-height: 350px;
+}
+body
+{
+    background: #000;
+    font: 12px 'Shadows Into Light' ,cursive;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+.tblContent
+{
+    width: 100%;
+    position: relative;
+}
+@media screen and (min-width:700px) /*320 or large*/
+{
+    .tblSize
+    {
+        min-width: 320px;
+        max-width: 1024px;
+    }
+    .tblHeader
+    {
+        height:200px;
+    }
+    .tblContent
+    {
+        height:400px;
+    }
+    .tblFooter
+    {
+        height:60px;
+    }
+    .clsHeaderdesc
+    {        
+        display: block;
+        float: left;
+        width: 372px;
+    }        
+    .containertitle
+    {
+        /*height: 60px;
+        width: 1024px;*/
+        color: #fff;
+        font-size: 60px;        
+    }
+    .imgLogo
+    {
+        float:left;
+        height:141px;
+        width:141px;
+    }
+    .container
+    {
+        height: 320px;
+        position: relative;
+        width: 1024px;
+    }
+    .imgtable
+    {
+        height: 197px;
+        left: 0;
+        position: absolute;
+        top: 125px;
+        width: 1011px;
+    }
+    .imgsearch
+    {
+        height: 330px;
+        left: 150px;
+        position: absolute;
+        top: -50px;
+        width: 247px;
+    }
+    .imglesson
+    {
+        height: 290px;
+        left: 650px;
+        position: absolute;
+        top: 0;
+        width: 226px;
+    }
+}
+@media screen and (min-width:100px) and (max-width:700px)
+{
+    .tblSize
+    {
+        min-width: 280px;
+        max-width: 319px;
+    }
+    .tblHeader
+    {
+        height: 48px;
+    }
+    .tblContent
+    {
+        height:200px;
+    }
+    .tblFooter
+    {
+        height: 60px;
+    }
+     .clsHeaderdesc
+    {        
+        display: block;
+        float: left;
+        width: 170px;
+    }      
+    .imgLogo
+    {
+        float:left;
+        height:60px;
+        width:60px;
+    }      
+    .containertitle
+    {
+        /*width: 100%;
+        height: 60px;*/
+        color: #fff;
+        font-size: 25px;        
+    }
+    .container
+    {
+        height: 170px;
+position: relative;
+width: 279px;
+    }
+    .imgtable
+    {
+        height: 80px;
+left: 0;
+position: absolute;
+top: 70px;
+width: 279px;
+    }
+    .imgsearch
+    {
+        height: 112px;
+left: 50px;
+position: absolute;
+top: 10px;
+width: 85px;
+    }
+    .imglesson
+    {
+        height: 90px;
+left: 160px;
+position: absolute;
+top: 20px;
+width: 80px;
+    }
+}

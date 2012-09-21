@@ -41,7 +41,7 @@
 </div><!--  form1  -->
 
 <div id="iframeBox">
-	<iframe id="frame">
+	<iframe id="theframe">
 	</iframe>
 	
 	<div id="goTo"></div>
@@ -53,7 +53,7 @@
 <div id="searchresults"></div>
 
 <div id="next">
-	
+	<input type="button" value="resume" name="resume" id="resume" />
 </div>
 
 </div><!-- contentWrapper -->
