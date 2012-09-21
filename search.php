@@ -19,7 +19,7 @@
 <div id="form1">
 <div id="search">
 	<input type="text" id="keyword" name="keyword" />
-	<input type="submit" name="submit" value="Q" id="dosearch" />
+	<input type="submit" name="submit" value="" id="dosearch" />
 
 	<select id="grade" name="grade">
 		<option value="any">Any</option>
@@ -43,12 +43,17 @@
 <div id="iframeBox">
 	<iframe id="frame">
 	</iframe>
+	
+	<div id="goTo"></div>
+	
+	<div id="addLesson"></div>
 </div>
 
-<div id="searchresults">
-</div>
+<div id="resultsimg"></div>
+<div id="searchresults"></div>
+
 <div id="next">
-	<input type="button" value="resume" name="resume" />
+	
 </div>
 
 </div><!-- contentWrapper -->

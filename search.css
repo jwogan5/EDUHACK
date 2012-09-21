@@ -1,16 +1,18 @@
 @CHARSET "UTF-8";
 
-html{background-color:#fff;}
+html{background-color:#000;}
 
-#contentWrapper{background-color:#fff;width:1024px;height:768px;margin:0 auto 0;border:1px solid green;   -moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;}
+#contentWrapper{background:#000 url(lesson-plan-btn-sml.png) 50px 25px no-repeat;width:1024px;height:768px;margin:0 auto 0; -moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;}
 
-#search{width:600px;margin:20px auto 0;}
-#keyword{width:400px;font-size:1em;   -moz-border-radius:7px;-webkit-border-radius:7px;border-radius:7px;}
-#grade{width:150px;}
+#search{width:650px;margin:-15px auto 0;padding-top:20px; -moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;}
+#keyword{float:left;margin-top:65px;width:300px;height:40px;font-size:1.5em;	-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;text-indent:10px;}
+#dosearch{float:left;background:url(Search-box.png) -587px 0 no-repeat;height:50px; width:90px;margin:65px 30px 0 -8px;border-width:0px;}
+#grade{float:left;margin-top:65px; width:150px;height:45px; font-size:1.5em;	-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;}
 
-#iframeBox{float:left;width:716px;min-height:572px;margin:40px 0 0 308px;background:#fff url(book-bgrnd.png) 0 0 no-repeat;}
-#searchresults{float:left;border:1px solid #000;width:285px;min-height:375px;max-height:575px;overflow:auto;margin:-575px 0 0 10px;-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;}
-#frame{margin:25px 60px;}
+#iframeBox{float:left;width:716px;min-height:572px;margin:60px 0 0 308px;background:#fff url(book-bgrnd.png) 0 0 no-repeat; -moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;}
+#resultsimg{margin:170px 0 0 30px;background:#000 url(results-header.png) 0 0 no-repeat;height:65px;width:232px;}
+#searchresults{float:left;margin:-507px 0 0 10px;width:285px;min-height:375px;max-height:510px;overflow:auto;-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;background-color:#000;}
+#frame{margin:50px 80px;width:500px;height:400px;}
 #next{float:left;width:100px;margin:10px 0 0 -200px;}
 .results{border-bottom:1px solid #000;margin:3px;padding:3px;
 	background: -moz-linear-gradient(top, #ebebeb 0%, #ffffff 64%); /* FF3.6+ */
@@ -21,7 +23,8 @@ html{background-color:#fff;}
 	background: linear-gradient(top, #ebebeb 0%,#ffffff 64%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebebeb', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
 }
-
+#goTo{margin:-35px 0 0 80px;background: url(go-to-site-btn.png) 0 0 no-repeat;width:193px;height:51px;}
+#addLesson{margin:-51px 0 0 340px;background: url(add-to-lesson-btn.png) 0 0 no-repeat;width:247px;height:51px;}
 
 
 /*
