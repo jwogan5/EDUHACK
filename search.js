@@ -4,6 +4,7 @@ $(function(){
 	var currentResource = '';
 	var resumeToken = '';
 	var clickedResume = false;
+	var currentSavedResource = '';
 	
 	
 	$('.results').delegate('click', function() {
@@ -17,6 +18,8 @@ $(function(){
 		clickedResume = true;
 		$('#dosearch').click();
 	});
+	
+	
 
 
 	$('#dosearch').bind('click', function() {
@@ -26,8 +29,6 @@ $(function(){
 	  if (clickedResume == false)
 	  	resumeToken = '';
 		
-	alert(resumeToken);
-
 	  $.ajax({
 	  		url: 'ajaxsearch.php',
 	  		type: "POST",
