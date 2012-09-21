@@ -10,7 +10,7 @@ class eduhack_db {
 		return self::dbh;
 	}
 
-	static public boolean connect() {
+	static public function connect() {
 		$dsn = 'mysql:host=localhost;dbname=eduhack';
 		$username = 'root';
 		$password = '';
@@ -28,7 +28,7 @@ class Author {
 	public $name = null;
 	public $authid = null;
 
-	function __construct($info) {
+	public function __construct($info = null) {
 		if($info instanceof PDOStatement) {
 			$this->popFromPDOStatement($info);
 		} else if(is_array($info)) {
@@ -43,16 +43,16 @@ class Author {
 			$this->name = $info;
 		}
 	}
-	private void popFromPDOStatement($info) {
+	private function popFromPDOStatement($info) {
 		$this->popFromAssocArray($info->fetch(PDO::FETCH_ASSOC));
 	}
-	private void popFromAssocArray($info) {
+	private function popFromAssocArray($info) {
 		if(isset($info['id'])) $this->id = $info['id'];
 		if(isset($info['name'])) $this->id = $info['name'];
 		if(isset($info['authid'])) $this->id = $info['authid'];
 	}
 
-	public void save() {
+	public function save() {
 		$db = eduhack_db::getInstance();
 		if($this->id == null) {
 			$qry = $db->prepare("INSERT INTO author (name, authid) VALUES(:name, :authid);");
@@ -78,7 +78,7 @@ class Lesson {
     public $assessment = null;
     public $author_id = null;
 
-	function __construct($info) {
+	public function __construct($info = null) {
 		if($info instanceof PDOStatement) {
 			$this->popFromPDOStatement($info);
 		} else if(is_array($info)) {
@@ -93,10 +93,10 @@ class Lesson {
 			$this->name = $info;
 		}
 	}
-	private void popFromPDOStatement($info) {
+	private function popFromPDOStatement($info) {
 		$this->popFromAssocArray($info->fetch(PDO::FETCH_ASSOC));
 	}
-	private void popFromAssocArray($info) {
+	private function popFromAssocArray($info) {
 		if(isset($info['id'])) $this->id = $info['id'];
 		if(isset($info['subject'])) $this->id = $info['subject'];
 		if(isset($info['title'])) $this->id = $info['title'];
@@ -110,7 +110,7 @@ class Lesson {
 		if(isset($info['author_id'])) $this->id = $info['author_id'];
 	}
 
-	public void save() {
+	public function save() {
 		$db = eduhack_db::getInstance();
 		if($this->id == null) {
 			$qry = $db->prepare("INSERT INTO lesson (subject, title, grade, duration, duration_type, purpose, instruction, materials, assessment, author_id) VALUES(:subject, :title, :grade, :duration, :duration_type, :purpose, :instruction, :materials, :assessment, :author_id);");
@@ -166,7 +166,7 @@ class LessonItem {
     public $notes = null;
     public $orderby = null;
 
-	function __construct($info) {
+	public function __construct($info = null) {
 		if($info instanceof PDOStatement) {
 			$this->popFromPDOStatement($info);
 		} else if(is_array($info)) {
@@ -181,24 +181,36 @@ class LessonItem {
 			$this->name = $info;
 		}
 	}
-	private void popFromPDOStatement($info) {
+	private function popFromPDOStatement($info) {
 		$this->popFromAssocArray($info->fetch(PDO::FETCH_ASSOC));
 	}
-	private void popFromAssocArray($info) {
+	private function popFromAssocArray($info) {
 		if(isset($info['id'])) $this->id = $info['id'];
-		if(isset($info['name'])) $this->id = $info['name'];
-		if(isset($info['authid'])) $this->id = $info['authid'];
+		if(isset($info['lesson_id'])) $this->id = $info['lesson_id'];
+		if(isset($info['title'])) $this->id = $info['title'];
+		if(isset($info['url'])) $this->id = $info['url'];
+		if(isset($info['lrdocid'])) $this->id = $info['lrdocid'];
+		if(isset($info['notes'])) $this->id = $info['notes'];
+		if(isset($info['orderby'])) $this->id = $info['orderby'];
 	}
 
-	public void save() {
+	public function save() {
 		$db = eduhack_db::getInstance();
 		if($this->id == null) {
-			$qry = $db->prepare("INSERT INTO lessonitem (name, authid) VALUES(:name, :authid);");
-			$qry->exec(array(':name'=>$this->name, ':authid'=>$this->authid));
+			$qry = $db->prepare("INSERT INTO lessonitem (lesson_id, title, url, lrdocid, notes, orderby) VALUES(:lesson_id, :title, :url, :lrdocid, :notes, :orderby);");
+			$qry->exec(array(
+				':lesson_id'=>$this->lesson_id,
+				':title'=>$this->title,
+				':url'=>$this->url,
+				':lrdocid'=>$this->lrdocid,
+				':notes'=>$this->notes,
+				':orderby'=>$this->orderby
+				));
 			$this->id = $db->lastInsertId();
 		} else {
-			$qry = $db->prepare("UPDATE lessonitem SET name = :name, authid = :authid WHERE lessonitem_id = :id;");
-			$qry->exec(array(':id'=>$this->id, ':name'=>$this->name, ':authid'=>$this->authid));
+			$qry = $db->prepare("UPDATE lessonitem SET lesson_id = :lesson_id, title = :title, url = :url, lrdocid = :lrdocid, notes = :notes, orderby = :orderby WHERE lessonitem_id = :id;");
+			$qry->exec(array(':id'=>$this->id,
+				));
 		}
 	}
 }
